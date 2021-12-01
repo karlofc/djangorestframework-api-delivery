@@ -33,6 +33,7 @@
 
 ## Generate models file creation
 - python manage.py makemigrations authentication
+- python manage.py makemigrations orders
 
 ## Reply models to db tables
 - python manage.py migrate (in case of error delete db.sqlite3)
