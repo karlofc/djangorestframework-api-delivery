@@ -9,9 +9,14 @@
 - pip install python-decouple (Separe settings from code)
 - pip install djangorestframework
 - pip install django-phonenumber-field[phonenumbers]
+- pip install -U djoser
+- pip install -U djangorestframework_simplejwt
 
 ### Dependencies list for pip
 - pip freeze > requirements.txt
+
+### Install from requirements
+- pip install -r requirements.txt
 
 ## Create project
 - django-admin startproject delivery .
@@ -40,3 +45,6 @@
 
 ## Crate Super User
 - python manage.py createsuperuser
+
+### Change password
+- python manage.py changepassword <user_name>
