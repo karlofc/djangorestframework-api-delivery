@@ -7,7 +7,7 @@ class UserCreationSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=25)
     email  = serializers.CharField(max_length=80)
     phone_number = PhoneNumberField(allow_null=False, allow_blank=False)
-    password = serializers.CharField(min_length=8)
+    password = serializers.CharField(min_length=8, write_only=True)
 
     class Meta:
         model = User
@@ -30,3 +30,16 @@ class UserCreationSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(detail='User with phone number exist')
 
         return super().validate(attrs)
+
+    def create(self, validate_data):
+        user = User.objects.create(
+            username = validate_data['username'],
+            email = validate_data['email'],
+            phone_number = validate_data['phone_number']
+        )
+
+        user.set_password(validate_data['password'])
+
+        user.save()
+
+        return user
