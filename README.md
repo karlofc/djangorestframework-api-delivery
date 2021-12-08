@@ -48,3 +48,6 @@
 
 ### Change password
 - python manage.py changepassword <user_name>
+
+## JWT Authentication
+- https://djoser.readthedocs.io/en/latest/jwt_endpoints.html
