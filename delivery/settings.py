@@ -46,6 +46,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'djoser',
+    'drf_yasg',
+
 ]
 
 AUTH_USER_MODEL =  'authentication.User'
@@ -61,6 +63,16 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_HEADER_TYPES': ('Bearer',),
+}
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
 }
 
 MIDDLEWARE = [

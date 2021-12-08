@@ -11,6 +11,7 @@
 - pip install django-phonenumber-field[phonenumbers]
 - pip install -U djoser
 - pip install -U djangorestframework_simplejwt
+- pip install -U drf-yasg
 
 ### Dependencies list for pip
 - pip freeze > requirements.txt
@@ -51,3 +52,6 @@
 
 ## JWT Authentication
 - https://djoser.readthedocs.io/en/latest/jwt_endpoints.html
+
+## OpenAPI Swagger
+- https://drf-yasg.readthedocs.io/en/stable/
